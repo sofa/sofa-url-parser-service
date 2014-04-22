@@ -1,5 +1,5 @@
 /**
- * sofa-url-parser-service - v0.1.3 - 2014-04-16
+ * sofa-url-parser-service - v0.1.3 - 2014-04-22
  * http://www.sofa.io
  *
  * Copyright (c) 2014 CouchCommerce GmbH (http://www.couchcommerce.com / http://www.sofa.io) and other contributors
@@ -30,7 +30,7 @@ sofa.define('sofa.UrlParserService', function ($location) {
     var utilityRegex = {
         urlBeforeCategory: /.*cat\//,
         urlBeforeProduct: /.*\/product\//,
-        urlRightFromSlash: /\/.*/
+        urlRightFromSlash: /(\/|\?).*/
     };
 
     /**
@@ -70,7 +70,7 @@ sofa.define('sofa.UrlParserService', function ($location) {
     /**
      * @method getCategoryUrlId
      * @memberof sofa.UrlParserService
-     * 
+     *
      * @description
      * Extracts a category url id from a URL for you and returns it.
      *

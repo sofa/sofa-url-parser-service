@@ -1,4 +1,13 @@
 <a name="0.1.3"></a>
+### 0.1.3 (2014-04-22)
+
+
+#### Bug Fixes
+
+* ***:** ignore trailing parameters ([28d96d72](https://github.com/sofa/sofa-url-parser-service/commit/28d96d7250433d750fa75425a448e07a9807ce2b))
+
+
+<a name="0.1.3"></a>
 ### 0.1.3 (2014-04-16)
 
 
