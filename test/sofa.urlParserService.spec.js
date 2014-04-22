@@ -7,8 +7,12 @@ describe('sofa.urlParserService', function () {
         locationService;
 
     var PRODUCT_URL = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten-vintage/product/fahrerbrille-chronos',
+        PRODUCT_URL2 = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten-vintage/product/fahrerbrille-chronos?now=1',
         PRODUCTS_URL = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten-vintage/products',
-        CATEGORIES_URL = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten';
+        PRODUCTS_URL2 = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten-vintage/products?now=1',
+        CATEGORIES_URL = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten',
+        CATEGORIES_URL2 = 'http://localhost:8888/couchcommerce/couchcommerce-frontend/app/dist/#/cat/deutsch-freizeitwelten?now=1';
+
 
     beforeEach(function () {
         locationService = new sofa.LocationService();
@@ -50,6 +54,11 @@ describe('sofa.urlParserService', function () {
             expect(urlParserService.isView('product')).toBe(true);
             expect(urlParserService.isView('products')).toBe(false);
             expect(urlParserService.isView('categories')).toBe(false);
+
+            locationService.path.andReturn(PRODUCT_URL2);
+            expect(urlParserService.isView('product')).toBe(true);
+            expect(urlParserService.isView('products')).toBe(false);
+            expect(urlParserService.isView('categories')).toBe(false);
         });
 
         it('it should detect it as products url', function () {
@@ -57,10 +66,22 @@ describe('sofa.urlParserService', function () {
             expect(urlParserService.isView('product')).toBe(false);
             expect(urlParserService.isView('products')).toBe(true);
             expect(urlParserService.isView('categories')).toBe(false);
+
+
+            locationService.path.andReturn(PRODUCTS_URL2);
+            expect(urlParserService.isView('product')).toBe(false);
+            expect(urlParserService.isView('products')).toBe(true);
+            expect(urlParserService.isView('categories')).toBe(false);
         });
 
-        it('it should detect it as products url', function () {
+        it('it should detect it as categories url', function () {
             spyOn(locationService, 'path').andReturn(CATEGORIES_URL);
+            expect(urlParserService.isView('product')).toBe(false);
+            expect(urlParserService.isView('products')).toBe(false);
+            expect(urlParserService.isView('categories')).toBe(true);
+
+
+            locationService.path.andReturn(CATEGORIES_URL2);
             expect(urlParserService.isView('product')).toBe(false);
             expect(urlParserService.isView('products')).toBe(false);
             expect(urlParserService.isView('categories')).toBe(true);
@@ -76,6 +97,21 @@ describe('sofa.urlParserService', function () {
         it('it can extract productUrlId from url', function () {
             spyOn(locationService, 'path').andReturn(PRODUCT_URL);
             expect(urlParserService.getProductUrlId()).toBe('fahrerbrille-chronos');
+
+            locationService.path.andReturn(PRODUCT_URL2);
+            expect(urlParserService.getProductUrlId()).toBe('fahrerbrille-chronos');
+        });
+    });
+
+
+    describe('sofa.UrlParserService#getCategoryUrlId', function () {
+
+        it('it can extract categoryUrlId from url', function () {
+            spyOn(locationService, 'path').andReturn(CATEGORIES_URL);
+            expect(urlParserService.getCategoryUrlId()).toBe('deutsch-freizeitwelten');
+
+            locationService.path.andReturn(CATEGORIES_URL2);
+            expect(urlParserService.getCategoryUrlId()).toBe('deutsch-freizeitwelten');
         });
     });
 });

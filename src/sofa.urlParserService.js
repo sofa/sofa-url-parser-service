@@ -20,7 +20,7 @@ sofa.define('sofa.UrlParserService', function ($location) {
     var utilityRegex = {
         urlBeforeCategory: /.*cat\//,
         urlBeforeProduct: /.*\/product\//,
-        urlRightFromSlash: /\/.*/
+        urlRightFromSlash: /(\/|\?).*/
     };
 
     /**
@@ -60,7 +60,7 @@ sofa.define('sofa.UrlParserService', function ($location) {
     /**
      * @method getCategoryUrlId
      * @memberof sofa.UrlParserService
-     * 
+     *
      * @description
      * Extracts a category url id from a URL for you and returns it.
      *
