@@ -1,8 +1,12 @@
 'use strict';
 /* global sofa */
 /**
- * @name UrlParserService
- * @namespace sofa.UrlParserService
+ * @sofadoc class
+ * @name sofa.UrlParserService
+ * @distFile dist/sofa.urlParserService.js
+ * @package sofa-url-parser-service
+ * @requiresPackage sofa-core
+ * @requires sofa.LocationService
  *
  * @description
  * This service provides a clean interface when it comes to accessing url ids
@@ -24,7 +28,8 @@ sofa.define('sofa.UrlParserService', function ($location) {
     };
 
     /**
-     * @method isView
+     * @sofadoc method
+     * @name sofa.UrlParserService#isView
      * @memberof sofa.UrlParserService
      *
      * @description
@@ -44,7 +49,8 @@ sofa.define('sofa.UrlParserService', function ($location) {
     };
 
     /**
-     * @method isRootCategory
+     * @sofadoc method
+     * @name sofa.UrlParserService#isRootCategory
      * @memberof sofa.UrlParserService
      *
      * @description
@@ -58,7 +64,8 @@ sofa.define('sofa.UrlParserService', function ($location) {
     };
 
     /**
-     * @method getCategoryUrlId
+     * @sofadoc method
+     * @name sofa.UrlParserService#getCategoryUrlId
      * @memberof sofa.UrlParserService
      *
      * @description
@@ -73,7 +80,8 @@ sofa.define('sofa.UrlParserService', function ($location) {
     };
 
     /**
-     * @method getProductUrlId
+     * @sofadoc method
+     * @name sofa.UrlParserService#getProductUrlId
      * @memberof sofa.UrlParserService
      *
      * @description
