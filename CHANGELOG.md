@@ -1,3 +1,17 @@
+<a name="0.2.0"></a>
+## 0.2.0 (2014-06-24)
+
+
+#### Bug Fixes
+
+* **gitignore:** ignore bower_components ([7605e477](https://github.com/sofa/sofa-url-parser-service/commit/7605e477c98676ba554c2597a1f5c1a654f794f5))
+
+
+#### Features
+
+* **grunt:** better deploying ([466066a3](https://github.com/sofa/sofa-url-parser-service/commit/466066a34ca8e228004691d1d84eb23bb0de184a))
+
+
 <a name="0.1.3"></a>
 ### 0.1.3 (2014-04-22)
 
