@@ -1,3 +1,11 @@
+### 0.3.1 (2015-02-04)
+
+
+#### Bug Fixes
+
+* **sofa.urlParserService:** removes angular code from vanilla dist ([4f366d54](https://github.com/sofa/sofa-url-parser-service/commit/4f366d544215e235a46813435c8cb8c5faa404a7))
+
+
 ## 0.3.0 (2015-02-04)
 
 
