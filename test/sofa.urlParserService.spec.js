@@ -50,38 +50,38 @@ describe('sofa.urlParserService', function () {
         });
 
         it('it should detect it as product url', function () {
-            spyOn(locationService, 'path').andReturn(PRODUCT_URL);
+            spyOn(locationService, 'path').and.returnValue(PRODUCT_URL);
             expect(urlParserService.isView('product')).toBe(true);
             expect(urlParserService.isView('products')).toBe(false);
             expect(urlParserService.isView('categories')).toBe(false);
 
-            locationService.path.andReturn(PRODUCT_URL2);
+            locationService.path.and.returnValue(PRODUCT_URL2);
             expect(urlParserService.isView('product')).toBe(true);
             expect(urlParserService.isView('products')).toBe(false);
             expect(urlParserService.isView('categories')).toBe(false);
         });
 
         it('it should detect it as products url', function () {
-            spyOn(locationService, 'path').andReturn(PRODUCTS_URL);
+            spyOn(locationService, 'path').and.returnValue(PRODUCTS_URL);
             expect(urlParserService.isView('product')).toBe(false);
             expect(urlParserService.isView('products')).toBe(true);
             expect(urlParserService.isView('categories')).toBe(false);
 
 
-            locationService.path.andReturn(PRODUCTS_URL2);
+            locationService.path.and.returnValue(PRODUCTS_URL2);
             expect(urlParserService.isView('product')).toBe(false);
             expect(urlParserService.isView('products')).toBe(true);
             expect(urlParserService.isView('categories')).toBe(false);
         });
 
         it('it should detect it as categories url', function () {
-            spyOn(locationService, 'path').andReturn(CATEGORIES_URL);
+            spyOn(locationService, 'path').and.returnValue(CATEGORIES_URL);
             expect(urlParserService.isView('product')).toBe(false);
             expect(urlParserService.isView('products')).toBe(false);
             expect(urlParserService.isView('categories')).toBe(true);
 
 
-            locationService.path.andReturn(CATEGORIES_URL2);
+            locationService.path.and.returnValue(CATEGORIES_URL2);
             expect(urlParserService.isView('product')).toBe(false);
             expect(urlParserService.isView('products')).toBe(false);
             expect(urlParserService.isView('categories')).toBe(true);
@@ -95,10 +95,10 @@ describe('sofa.urlParserService', function () {
         });
 
         it('it can extract productUrlId from url', function () {
-            spyOn(locationService, 'path').andReturn(PRODUCT_URL);
+            spyOn(locationService, 'path').and.returnValue(PRODUCT_URL);
             expect(urlParserService.getProductUrlId()).toBe('fahrerbrille-chronos');
 
-            locationService.path.andReturn(PRODUCT_URL2);
+            locationService.path.and.returnValue(PRODUCT_URL2);
             expect(urlParserService.getProductUrlId()).toBe('fahrerbrille-chronos');
         });
     });
@@ -107,10 +107,10 @@ describe('sofa.urlParserService', function () {
     describe('sofa.UrlParserService#getCategoryUrlId', function () {
 
         it('it can extract categoryUrlId from url', function () {
-            spyOn(locationService, 'path').andReturn(CATEGORIES_URL);
+            spyOn(locationService, 'path').and.returnValue(CATEGORIES_URL);
             expect(urlParserService.getCategoryUrlId()).toBe('deutsch-freizeitwelten');
 
-            locationService.path.andReturn(CATEGORIES_URL2);
+            locationService.path.and.returnValue(CATEGORIES_URL2);
             expect(urlParserService.getCategoryUrlId()).toBe('deutsch-freizeitwelten');
         });
     });
