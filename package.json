@@ -1,6 +1,6 @@
 {
     "name": "sofa-url-parser-service",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Sofa Web SDK url parser service component.",
     "main": "dist/sofa.urlParserService.js",
     "homepage": "http://www.sofa.io",
