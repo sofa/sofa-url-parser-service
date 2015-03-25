@@ -1,3 +1,11 @@
+### 0.3.2 (2015-03-25)
+
+
+#### Bug Fixes
+
+* **bower.json:** fixes naming ([3390714e](https://github.com/sofa/sofa-url-parser-service/commit/3390714ea23e3867de3ad61bb5845f093f6e9a6c), closes [#1](https://github.com/sofa/sofa-url-parser-service/issues/1))
+
+
 ### 0.3.1 (2015-02-04)
 
 

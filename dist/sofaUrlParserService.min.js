@@ -1,5 +1,5 @@
 /**
- * sofa-url-parser-service - v0.3.1 - Wed Feb 04 2015 16:57:05 GMT+0100 (CET)
+ * sofa-url-parser-service - v0.3.2 - Wed Mar 25 2015 15:07:05 GMT+0100 (CET)
  * http://www.sofa.io
  *
  * Copyright (c) 2014 CouchCommerce GmbH (http://www.couchcommerce.com / http://www.sofa.io) and other contributors
